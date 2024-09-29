@@ -16,3 +16,10 @@ body{
     align-items: center;
     padding: 20px;
 }
+
+.inputs{
+    background-color: black;
+    padding: 15px;
+    border-radius: 5px;
+    
+}
