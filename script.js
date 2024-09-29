@@ -28,9 +28,10 @@ if(birthday){
     
 
     
-    years.textContent = year + "years";
-    months.textContent = month + "months";
-    days.textContent = day + "days";
+    years.innerHTML = year + " years";
+    months.innerHTML = month + " months";
+    days.innerHTML = day + " days";
+    
     }else{
     alert("Enter a valid date");
     }
