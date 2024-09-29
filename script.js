@@ -1,7 +1,7 @@
 
-
-function calculateAge() {
-    var birthday = document.getElementById("dob").value
+function calculateAge(event) {
+    event.preventDefault();
+    var birthday = document.getElementById("dob").value;
 var years = document.getElementById("years")
 var months = document.getElementById("months")
 var days = document.getElementById("days")
@@ -13,24 +13,30 @@ if(birthday){
     var month = today.getMonth() - birthDate.getMonth();
     var day = today.getDate() - birthDate.getDate();
     
-    if (day < 0) {
-        month--;
-        day += new Date(year, month, 0).getDate();
-    }
-    
-    if (month < 0) {
+   
+    if (month < 0 || (month === 0 && day < 0)) {
         year--;
         month += 12;
     }
+
+    if (day < 0) {
+        month--;
+        var previousMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+        day += previousMonth; 
+    }
     
-    years.textContent = year;
-    months.textContent = month;
-    days.textContent = day;
+    
+
+    
+    years.textContent = year + "years";
+    months.textContent = month + "months";
+    days.textContent = day + "days";
     }else{
     alert("Enter a valid date");
     }
 
 
-}
+}  
+
 
 
