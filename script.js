@@ -2,7 +2,9 @@
 
 function calculateAge() {
     var birthday = document.getElementById("dob").value
-var result = document.getElementById("ageResult")
+var years = document.getElementById("years")
+var months = document.getElementById("months")
+var days = document.getElementById("Days")
 
 if(birthday){
     var today = new Date();
@@ -10,6 +12,9 @@ if(birthday){
     var year = today.getFullYear() - birthDate.getFullYear();
     var month = today.getMonth() - birthDate.getMonth();
     var day = today.getDay() - birthDate.getDay();
+
+
+
 }else{
     alert("Enter your birth date")
 }
